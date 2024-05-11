@@ -42,3 +42,15 @@ declare module '@medusajs/medusa/dist/models/shipping-profile' {
         store?: Store
     }
 }
+
+declare module '@medusajs/medusa/dist/models/order' {
+
+    interface Order {
+        store_id?: string
+        store?: Store
+        order_parent_id?: string
+        parent?: Order
+        children?: Order[]
+    }
+
+}
