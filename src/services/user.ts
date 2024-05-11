@@ -3,6 +3,7 @@ import {
   UserService as MedusaUserService,
 } from "@medusajs/medusa"
 import { User } from "../models/user"
+import StoreService from "./store"
 import { 
   CreateUserInput as MedusaCreateUserInput,
 } from "@medusajs/medusa/dist/types/user"
@@ -41,6 +42,7 @@ class UserService extends MedusaUserService {
       let newStore = storeRepo.create()
       newStore = await storeRepo.save(newStore)
       user.store_id = newStore.id
+      this.eventBus_.emit(StoreService.Events.CREATED, { id: newStore.id })
     }
     return await super.create(user, password)
   }
