@@ -35,7 +35,7 @@
     "@tanstack/react-query": "5.81.5",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
-    "dotenv": "17.1.0",
+    "dotenv": "17.2.0",
     "express": "^5.1.0",
     "medusa-fulfillment-manual": "latest",
     "medusa-interfaces": "latest",
